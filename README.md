@@ -1,1 +1,3 @@
 # nixos
+
+with dwm
