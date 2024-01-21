@@ -1,3 +1,3 @@
 # nixos
 
-with dwm
+with dwm and awesome wm
