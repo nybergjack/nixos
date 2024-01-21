@@ -31,6 +31,7 @@
     oh-my-zsh
     zsh-powerlevel10k
     kitty
+    picom
     git
     tmux
     rofi
@@ -70,6 +71,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

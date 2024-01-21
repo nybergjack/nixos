@@ -9,13 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #Neovim plugins that does not have a nix plugin
-
-    plugin-auto-session.url = "github:rmagatti/auto-session";
-    plugin-auto-session.flake = false;
-
-    plugin-nvim-tree.url = "github:nvim-tree/nvim-tree.lua";
-    plugin-nvim-tree.flake = false;
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -24,11 +17,21 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-    
-      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+      #---------------  DWM -------------------------#
+      nixosConfigurations.dwm = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [ 
-            ./hosts/default/configuration.nix
+            #./hosts/dwm/configuration.nix
+            ./hosts/dwm/configuration.nix
+             inputs.home-manager.nixosModules.default
+          ];
+        };
+        
+      #---------------  Awesome  -------------------------#
+        nixosConfigurations.awesome= nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+          modules = [ 
+            ./hosts/awesome/configuration.nix
              inputs.home-manager.nixosModules.default
           ];
         };

@@ -47,17 +47,13 @@
     LC_TIME = "sv_SE.UTF-8";
   };
 
-  # Remove sound.enable or set it to false if you had it set previously, as sound.enable is only meant for ALSA-based configurations
 
-# rtkit is optional but recommended
 security.rtkit.enable = true;
 services.pipewire = {
   enable = true;
   alsa.enable = true;
   alsa.support32Bit = true;
   pulse.enable = true;
-  # If you want to use JACK applications, uncomment this
-  #jack.enable = true;
 };
 
   # Configure keymap in X11
@@ -68,7 +64,8 @@ services.pipewire = {
 
 
   services.xserver.enable = true;
-services.xserver.windowManager.dwm.enable = true;
+  services.xserver.windowManager.dwm.enable = true;
+
 
   #Walpapper as ~/.background-image
   services.xserver.desktopManager.wallpaper.combineScreens = false;
@@ -126,6 +123,8 @@ services.xserver.displayManager.setupCommands = ''
    zsh-syntax-highlighting
    zsh-history-substring-search
 	 st
+   picom
+   fzf
    mongodb-compass
    insomnia
    vscode
@@ -140,7 +139,6 @@ services.xserver.displayManager.setupCommands = ''
    wlogout
 	 neovim
 	 spotify
-	 picom
    unzip
 	 teams-for-linux
    discord
@@ -181,7 +179,7 @@ services.xserver.displayManager.setupCommands = ''
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+   services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

@@ -6,16 +6,17 @@ let
   myAliases = {
    vim="nvim";
    vi="nvim";
-   cdnix="cd nixos/hosts/default/";
+   cddwm="cd nixos/hosts/dwm/";
+   cdawesome="cd nixos/hosts/awesome/";
    cdhome="cd nixos/modules/home-manager/";
    cd2="cd ../..";
-   rebnix="sudo nixos-rebuild switch --flake ~/nixos/#default";
-   vihome="sudo -e home.nix";
-   vinix="sudo -e configuration.nix";
+   rebdwm="sudo nixos-rebuild switch --flake ~/nixos/#dwm";
+   rebawesome="sudo nixos-rebuild switch --flake ~/nixos/#awesome";
+   vihome="vi home.nix";
+   vinix="vi configuration.nix";
    gc="git clone";
   };
 in
-
 {
   programs.zsh = {
       enable = true;
@@ -25,11 +26,12 @@ in
       shellAliases = myAliases;
       initExtra = ''
       # Costom command
+      ZSH_TMUX_AUTOSTART=true
       neofetch
       '';
       oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "autojump" ];
+      plugins = [ "git" "tmux"];
       theme = "intheloop";
       };
   };
