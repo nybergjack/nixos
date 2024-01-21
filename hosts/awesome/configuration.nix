@@ -73,6 +73,13 @@ services.pipewire = {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  #Install nerdfonts
+  fonts.packages = with pkgs; [
+  nerdfonts
+];
+
+
+
   services = {
 
     xserver = {
@@ -136,13 +143,15 @@ environment = {
         zsh-history-substring-search
         st
         picom
-        fzf
         mongodb-compass
         insomnia
         vscode
-        gnumake
-        gcc
+        btop
         git
+        wget
+        gcc
+        ripgrep
+        fd
         firefox
         tmux
         neofetch
