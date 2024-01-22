@@ -131,6 +131,7 @@ services.xserver.displayManager.setupCommands = ''
 	 gnumake
 	 gcc
 	 git
+   lazygit
 	 firefox
 	 tmux
 	 neofetch
@@ -143,6 +144,7 @@ services.xserver.displayManager.setupCommands = ''
 	 teams-for-linux
    discord
    python3
+   xclip
 	 xfce.thunar
 	 xorg.libX11
 	 xorg.libX11.dev

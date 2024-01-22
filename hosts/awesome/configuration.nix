@@ -117,11 +117,6 @@ services.pipewire = {
           };
         };
       };
-      #Walpapper as ~/.background-image
-      desktopManager = {
-      wallpaper.combineScreens = false;
-      wallpaper.mode = "scale";         
-      };
     };
 
     # Enable the OpenSSH daemon.
@@ -149,6 +144,8 @@ environment = {
         btop
         git
         wget
+        xclip
+        lazygit
         gcc
         ripgrep
         fd
