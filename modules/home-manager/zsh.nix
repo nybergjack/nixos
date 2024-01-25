@@ -8,10 +8,12 @@ let
    vi="nvim";
    cddwm="cd nixos/hosts/dwm/";
    cdawesome="cd nixos/hosts/awesome/";
+   cdhypr="cd nixos/hosts/hyprland/";
    cdhome="cd nixos/modules/home-manager/";
    cd2="cd ../..";
    rebdwm="sudo nixos-rebuild switch --flake ~/nixos/#dwm";
    rebawesome="sudo nixos-rebuild switch --flake ~/nixos/#awesome";
+   rebhypr="sudo nixos-rebuild switch --flake ~/nixos/#hyprland";
    vihome="vi home.nix";
    vinix="vi configuration.nix";
    gc="git clone";
@@ -26,7 +28,6 @@ in
       shellAliases = myAliases;
       initExtra = ''
       # Costom command
-      ZSH_TMUX_AUTOSTART=true
       neofetch
       '';
       oh-my-zsh = {
