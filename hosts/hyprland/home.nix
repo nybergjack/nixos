@@ -8,7 +8,6 @@
   imports = [
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/git.nix
-    ##../../modules/home-manager/waybar.nix
     # does not work propeply
     # ../../modules/home-manager/nvim.nix 
   ];
