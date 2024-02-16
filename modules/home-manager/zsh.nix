@@ -14,6 +14,7 @@ let
    rebdwm="sudo nixos-rebuild switch --flake ~/nixos/#dwm";
    rebawesome="sudo nixos-rebuild switch --flake ~/nixos/#awesome";
    rebhypr="sudo nixos-rebuild switch --flake ~/nixos/#hyprland";
+   updatenix="sudo nix flake update";
    vihome="vi home.nix";
    vinix="vi configuration.nix";
    gc="git clone";
@@ -29,10 +30,11 @@ in
       initExtra = ''
       # Costom command
       neofetch
+      eval "$(direnv hook zsh)"
       '';
       oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "tmux"];
+      plugins = [ "git"];
       theme = "intheloop";
       };
   };

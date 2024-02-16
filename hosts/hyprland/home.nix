@@ -38,6 +38,7 @@
     swww
     swaylock
     waybar
+    nwg-look
     cliphist
     dunst
     dmenu
