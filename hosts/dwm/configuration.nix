@@ -134,6 +134,7 @@ services.xserver.displayManager.setupCommands = ''
    lazygit
 	 firefox
 	 tmux
+   zoxide
 	 neofetch
 	 nodejs
 	 rofi
