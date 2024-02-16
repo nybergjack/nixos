@@ -1,3 +1,3 @@
 # nixos
 
-with dwm and awesome wm
+with dwm and awesome and hyprland
