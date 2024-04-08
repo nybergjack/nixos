@@ -58,6 +58,12 @@ services.pipewire = {
 
   services.xserver.enable = true;
   services.xserver.windowManager.dwm.enable = true;
+  
+  # Flatpak
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "gtk";
 
 
   #Walpapper as ~/.background-image
@@ -104,6 +110,25 @@ services.xserver.displayManager.setupCommands = ''
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "openssl-1.1.1w"
+  ];
+
+
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    # Certain features, including CLI integration and system authentication support,
+    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+    polkitPolicyOwners = [ "jack" ];
+  };
+
+  # Pinentry
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+};
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -121,13 +146,22 @@ services.xserver.displayManager.setupCommands = ''
    fzf
    ripgrep
    fd
+   curl
+   gnupg
+   pinentry
+   btop
    direnv
+   rustup
+   cargo
+   trunk
    openssl
    mongodb-compass
    dbeaver
    postgresql
    insomnia
    vscode
+   nodePackages.prisma
+   prisma-engines
 	 gnumake
 	 gcc
 	 git
@@ -138,12 +172,14 @@ services.xserver.displayManager.setupCommands = ''
 	 neofetch
 	 nodejs
 	 rofi
-   wlogout
 	 neovim
 	 spotify
    unzip
 	 teams-for-linux
    discord
+   flameshot
+   obs-studio
+   celluloid
    python3
    libverto
    xclip
